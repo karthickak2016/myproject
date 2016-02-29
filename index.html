@@ -64,6 +64,41 @@
   		</div>
 	</div>
 	<br><br>
-	<div id="includeContent"></div>
+	<div id="includeContent">
+		<div class="container" id="div3">
+		<div class="col-md-9 col-md-offset-4">
+			<form id="createnewemployee">
+				<div class="row">
+					<div class="col-sm-2"><label for="empid">Employee ID</label></div>							
+					<div class="col-sm-4"><input type="empid" class="form-control" id="empid" placeholder="Employee ID" required></div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-2"><label for="name">Name</label></div>
+					<div class="col-sm-4"><input type="name" class="form-control" id="name" placeholder="Employee Name" required></div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-2"><label for="ageselect">Age</label></div>			
+					<div class="col-sm-4"><select class="form-control" id="ageselect" required></select></div>				
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-2"><label for="address">Address</label></div>
+					<div class="col-sm-4"><input type="address" class="form-control" id="address" placeholder="Employee Address" required></div>				
+				</div>
+				<br>
+				<div class="row">
+					<div class="col-sm-2"><label for="salary">Salary</label></div>
+					<div class="col-sm-4"><input type="salary" class="form-control" id="salary" placeholder="Employee Salary" required></div>
+				</div>
+				<br><br>
+				<button type="submit" id="submitbtn" class="btn btn-primary">Create New User</button>
+				<button type="button" id="clearbtn" class="btn btn-info">Clear</button>
+				<button type="button" id="bcktohm" class="btn btn-info">Back to Home</button>
+			</form>
+		</div>
+		</div>
+	</div>
 </body>
 </html>
