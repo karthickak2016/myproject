@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MyProject</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <!--<script type="text/javascript" src="js/bootstrap.js"></script>-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+	$(document).ready(function() {   
+		$("#createnewuser").click(function() {
+			$.get('pages/commons/createnewuser.html', function(data){
+				$('#includeContent').html(data);
+			}).done(function(){
+				loadOptions();
+			})
+		});	
+		function loadOptions() {
+			$('ageselect option').remove();
+			$("#ageselect").append("<option value=''>"+''+"</option>");
+			for (var i = 18; i < 57; i++) {
+				 $("#ageselect").append("<option value='"+i+"'>"+i+"</option>");
+			}
+			$("#clearbtn").click(function() {
+				$('#empid').val('');
+				$('#name').val('');
+				$('#ageselect').val('');
+				$('#address').val('');
+				$('#salary').val('');
+			});
+			$("#submitbtn").click(function() {
+				alert('New user added');
+			});
+		}
+	});
+  </script>
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-primary">
+		<div class="container">  		
+			<center><h3>Employee Maintenance</h1></center> 
+		</div>
+	</nav>
+	<div class="btn-group btn-group-justified bg-primary" role="group" aria-label="...">
+		<div class="btn-group" role="group">
+    		<button type="button" class="btn btn-primary">Home</button>
+  		</div>
+	  	<div class="btn-group" role="group">
+    		<button type="button" id="createnewuser" class="btn btn-primary">Create new user</button>
+  		</div>
+  		<div class="btn-group" role="group">
+    		<button type="button" class="btn btn-primary">List User</button>
+  		</div>
+  		<div class="btn-group" role="group">
+    		<button type="button" class="btn btn-primary">Update user details</button>
+  		</div>
+  		<div class="btn-group" role="group">
+    		<button type="button" class="btn btn-primary">Delete User</button>
+  		</div>
+  		<div class="btn-group" role="group">
+    		<button type="button" class="btn btn-primary">About</button>
+  		</div>
+	</div>
+	<br><br>
+	<div id="includeContent"></div>
+</body>
+</html>
