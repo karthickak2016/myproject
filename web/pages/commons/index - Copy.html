@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<title>Hello AngularJS</title>
+		<script type="text/javascript" src="../../js/angular-min.js"></script>
+	</head>
+
+	<body ng-controller="Hello">
+		<script type="text/javascript">
+			var myapp = angular.module('myapp',[]);
+			myapp.controller('Hello', function($scope, $http){
+				 $http.get('http://localhost:8080/myproject/rest/login').
+        success(function(response) {
+            $scope.login = response;
+        });))
+		</script> 
+			<p>The ID is {{login.username}}</p>
+			<p>The ID is {{5+5}}</p>
+			<p>The content is {{login.password}}</p>
+
+	</body>
+</html>
